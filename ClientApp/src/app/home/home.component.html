@@ -1,4 +1,5 @@
 
+<ng-container *ngIf="openChat === false">
     <div class="text-center">
         <h1>Let's get you connected and <span class="text-danger">chat</span> with orther
             <span class="text-info">people</span>
@@ -12,17 +13,17 @@
                     <h3>Choose your name</h3>
                     <div class="form-floating mb-3">
                         <input formControlName="name" type="text" class="form-control" placeholder="Name"
-                        [class.is-invalid]="submitted && userForm.get('name')?.errors">
-                        <label for="name">Name</label>  
+                         [class.is-invalid]="submitted && userForm.get('name')?.errors">
+                        <label for="name">Name</label>
                         <span class="text-danger" *ngIf="submitted && userForm.get('name')?.hasError('required')">
                             Please choose a name
                         </span>
                         <span class="text-danger" *ngIf="submitted && userForm.get('name')?.hasError('maxlength') ||
-                         userForm.get('name')?.hasError('minlength')">
+                        userForm.get('name')?.hasError('minlength')">
                             Your name must be at least 3, and maximum 15 characters
                         </span>
-                    </div> 
-
+                    </div>
+    
                     <div class="form-floating" *ngIf="apiErrorMessages.length > 0">
                         <ul class="text-danger">
                             <li *ngFor="let error of apiErrorMessages">
@@ -30,14 +31,17 @@
                             </li>
                         </ul>
                     </div>
-
-
+    
                     <div class="d-grid mt-4 px-4">
                         <button class="btn btn-warning" type="submit">Submit</button>
-                    </div> 
+                    </div>
                 </form>
             </main>
         </div>
     </div>
+</ng-container>
 
+<ng-container *ngIf="openChat === true">
+    <app-chat (closeChatEmitter)="closeChat()"></app-chat>
+</ng-container>
 

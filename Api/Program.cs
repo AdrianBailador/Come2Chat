@@ -15,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSingleton<ChatService>();
 builder.Services.AddSignalR();
+builder.Services.AddCors();
 
 
 
@@ -22,6 +23,8 @@ builder.Services.AddSignalR();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:4200"));
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

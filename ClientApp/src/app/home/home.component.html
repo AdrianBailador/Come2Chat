@@ -22,6 +22,16 @@
                             Your name must be at least 3, and maximum 15 characters
                         </span>
                     </div> 
+
+                    <div class="form-floating" *ngIf="apiErrorMessages.length > 0">
+                        <ul class="text-danger">
+                            <li *ngFor="let error of apiErrorMessages">
+                                {{error}}
+                            </li>
+                        </ul>
+                    </div>
+
+
                     <div class="d-grid mt-4 px-4">
                         <button class="btn btn-warning" type="submit">Submit</button>
                     </div> 

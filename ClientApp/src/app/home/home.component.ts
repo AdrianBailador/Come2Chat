@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
           this.chatservice.myName = this.userForm.get('name')?.value; 
           this.openChat = true;
           this.userForm.reset();
-          this.submitted = false;
+          this.submitted = true;
 
         }, 
         error: error =>{

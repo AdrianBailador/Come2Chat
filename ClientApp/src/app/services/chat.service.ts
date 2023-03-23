@@ -15,7 +15,7 @@ export class ChatService {
   constructor(private httpClient: HttpClient) { }
 
   registerUser(user: User){
-    return this.httpClient.post(`${environment.apiUrl}`,user,{responseType:'text'})
+    return this.httpClient.post(`${environment.apiUrl}api/chat/register-user`,user,{responseType:'text'})
   }
 
   createChatConnection(){

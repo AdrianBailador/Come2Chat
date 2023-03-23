@@ -12,6 +12,7 @@ export class ChatComponent implements OnInit {
   constructor(public chatService: ChatService) { }
 
   ngOnInit(): void {
+    this.chatService.createChatConnection();
   }
 
   backToHome() {

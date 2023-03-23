@@ -20,6 +20,20 @@ export class ChatService {
 
   createChatConnection(){
     this.chatConnection = new HubConnectionBuilder().withUrl(`${environment.apiUrl}Hubs/chat`).withAutomaticReconnect().build();
+    this.chatConnection?.stop().catch(error=>console.log(error));
+
+    this.chatConnection.on('UserConnected', ()=> {
+      this.addUserConnectionId();
+    })
+  }
+
+  stopChatConnection(){
+    this.chatConnection?.stop().catch(error=>console.log(error));
+  }
+
+  async addUserConnectionId(){
+    return this.chatConnection?.invoke('AddUserConnectionId', this.myName)
+    .catch(error=>console.log(error));
   }
 
 }

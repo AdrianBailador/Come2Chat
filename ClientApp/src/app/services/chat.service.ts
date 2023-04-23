@@ -11,6 +11,7 @@ import { HubConnectionBuilder } from '@microsoft/signalr/dist/esm/HubConnectionB
 export class ChatService {
   myName: string = '';
   private chatConnection?: HubConnection;
+  onlineUsers: string[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,6 +26,10 @@ export class ChatService {
     this.chatConnection.on('UserConnected', ()=> {
       this.addUserConnectionId();
     })
+
+    this.chatConnection.on('OnlineUsers', (onlineUsers)=> {
+      this.onlineUsers= [...onlineUsers];
+    });
   }
 
   stopChatConnection(){

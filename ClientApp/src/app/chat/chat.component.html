@@ -9,76 +9,33 @@
 <div class="row mt-3">
     <div class="col-lg-2">
         <div class="card border-secondary mb-3">
-            <div class="card-header h3 text-muted text-center">{{chatService.myName}}</div>
+            <div class="card-header h3 text-muted text-center">Users</div>
             <div class="card-body" style="min-height: 555px;">
-                <div class="row mt-1">
+                <div class="row mt-1" *ngFor="let user of chatService.onlineUsers">
                     <div class="col">
                         <div class="d-grid">
-                            <button type="button"
-                                class="btn btn-success card-text btn-block">User1</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-1">
-                    <div class="col">
-                        <div class="d-grid">
-                            <button type="button" class="btn btn-dark card-text btn-block">User2</button>
+                            <button type="button" class="btn card-text btn-block"
+                                [ngClass]="{'btn-success' : user === chatService.myName, 'btn-dark': user !== chatService.myName}"
+                                (dblclick)="openPrivateChat(user)"
+                                [disabled]="user === chatService.myName">
+                                {{user}}
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 
     <div class="col-lg-9">
         <div class="card border-secondary">
             <div class="card-header h3 text-muted text-center">Messages</div>
             <div class="card-body" style="min-height: 500px;">
-                <div style="overflow-y: auto; height: 450px;">
-                    <p class="card-text">
-                        <span class="text-primary">User1: </span>
-                        <span class="ml-1">Some messages goes here</span>
-                    </p>
-                    <p class="card-text">
-                        <span class="text-primary">User2: </span>
-                        <span class="ml-1">Some messages goes here</span>
-                    </p>
-                    <p class="card-text">
-                        <span class="text-primary">User2: </span>
-                        <span class="ml-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur in
-                            delectus laudantium sapiente suscipit soluta, explicabo voluptas neque voluptatum vero iusto
-                            amet, nemo ullam iste sed eligendi doloremque? Rem optio blanditiis laborum eligendi
-                            excepturi maxime adipisci quaerat, delectus ad praesentium. Et numquam error esse!
-                            Laudantium magni nulla totam cum quis.</span>
-                    </p>
-                    <p class="card-text">
-                        <span class="text-primary">User2: </span>
-                        <span class="ml-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur in
-                            delectus laudantium sapiente suscipit soluta, explicabo voluptas neque voluptatum vero iusto
-                            amet, nemo ullam iste sed eligendi doloremque? Rem optio blanditiis laborum eligendi
-                            excepturi maxime adipisci quaerat, delectus ad praesentium. Et numquam error esse!
-                            Laudantium magni nulla totam cum quis.</span>
-                    </p>
-                    <p class="card-text">
-                        <span class="text-primary">User2: </span>
-                        <span class="ml-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur in
-                            delectus laudantium sapiente suscipit soluta, explicabo voluptas neque voluptatum vero iusto
-                            amet, nemo ullam iste sed eligendi doloremque? Rem optio blanditiis laborum eligendi
-                            excepturi maxime adipisci quaerat, delectus ad praesentium. Et numquam error esse!
-                            Laudantium magni nulla totam cum quis.</span>
-                    </p>
-                    <p class="card-text">
-                        <span class="text-primary">User2: </span>
-                        <span class="ml-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur in
-                            delectus laudantium sapiente suscipit soluta, explicabo voluptas neque voluptatum vero iusto
-                            amet, nemo ullam iste sed eligendi doloremque? Rem optio blanditiis laborum eligendi
-                            excepturi maxime adipisci quaerat, delectus ad praesentium. Et numquam error esse!
-                            Laudantium magni nulla totam cum quis.</span>
-                    </p>
-                </div>
+               <app-messages [messages]="chatService.messages"></app-messages>
+            </div>
+            <div class="card-footer">
+               <app-chat-input (contentEmitter)="sendMessage($event)"></app-chat-input>
             </div>
         </div>
-
-   
+    </div>
+</div>

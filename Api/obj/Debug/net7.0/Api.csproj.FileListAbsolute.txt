@@ -31,3 +31,4 @@ C:\Users\Adrián Bailador\Documents\GitHub\Come2Chat\Api\obj\Debug\net7.0\refint
 C:\Users\Adrián Bailador\Documents\GitHub\Come2Chat\Api\obj\Debug\net7.0\Api.pdb
 C:\Users\Adrián Bailador\Documents\GitHub\Come2Chat\Api\obj\Debug\net7.0\Api.genruntimeconfig.cache
 C:\Users\Adrián Bailador\Documents\GitHub\Come2Chat\Api\obj\Debug\net7.0\ref\Api.dll
+C:\Users\Adrián Bailador\Documents\GitHub\Come2Chat\Api\bin\Debug\net7.0\Api.staticwebassets.runtime.json

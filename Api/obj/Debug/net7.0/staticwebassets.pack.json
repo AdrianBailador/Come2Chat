@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
+    },
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\main.651fea004855d1d3.js",
+      "PackagePath": "staticwebassets\\main.651fea004855d1d3.js"
+    },
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\polyfills.15998b4dbbe02575.js",
+      "PackagePath": "staticwebassets\\polyfills.15998b4dbbe02575.js"
+    },
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\runtime.00285116a9b7ab64.js",
+      "PackagePath": "staticwebassets\\runtime.00285116a9b7ab64.js"
+    },
+    {
+      "Id": "C:\\Users\\Adrián Bailador\\Documents\\GitHub\\Come2Chat\\Api\\wwwroot\\styles.51e3e0b5e988d7d4.css",
+      "PackagePath": "staticwebassets\\styles.51e3e0b5e988d7d4.css"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Api.props",
+      "PackagePath": "build\\Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Api.props",
+      "PackagePath": "buildMultiTargeting\\Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Api.props",
+      "PackagePath": "buildTransitive\\Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

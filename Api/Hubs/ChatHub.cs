@@ -34,6 +34,11 @@ namespace Api.Hubs
             await DisplayOnlineUser();
         }
 
+        public async Task ReceiveMessage(MessageDto message)
+        {
+            await Clients.Group("Come2Chat").SendAsync("NewMessage", message);
+        }
+
         private async Task DisplayOnlineUser()
         {
             var onlineUsers = _chatService.GetOnlineUsers();
